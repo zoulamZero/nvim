@@ -1,9 +1,10 @@
 return require("packer").startup(function(use)
     -- package manager
     use("wbthomason/packer.nvim")
+    use("glepnir/dashboard-nvim")
 
     -- lua functions
-    use("nvim-lua/plenary.nvim")
+    -- use("nvim-lua/plenary.nvim")
     -- icons for other plugins
     use({
         "kyazdani42/nvim-web-devicons",
@@ -119,15 +120,7 @@ return require("packer").startup(function(use)
     use({
         "lewis6991/gitsigns.nvim",
         config = function()
-            require("init-gitsigns").setup({
-                current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
-                current_line_blame_opts = {
-                    virt_text = true,
-                    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-                    delay = 500,
-                    ignore_whitespace = false,
-                },
-            })
+            require("init-gitsigns")
         end,
     })
     -- which-key 按下leader 弹出按键提示，根据引导顺序查看按键组合
